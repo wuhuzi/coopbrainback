@@ -14,22 +14,30 @@ import lombok.experimental.Accessors;
  * </p>
  *
  * @author wuhuzi
- * @since 2020-10-27
+ * @since 2020-10-30
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
-@TableName("cbb_object_relation")
-public class ObjectRelation implements Serializable {
+@TableName("cbb_object_relation_object")
+public class ObjectRelationObject implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
     @TableId(value = "id", type = IdType.AUTO)
     private Long id;
 
-    private Integer relationKey;
+    private Long objectOneId;
 
-    private String relationValue;
+    private Integer relationName;
+
+    private Long objectTwoId;
+
+    private String relationAttribute;
+
+    private Integer isBuildFlag;
+
+    private String remark;
 
 
 }

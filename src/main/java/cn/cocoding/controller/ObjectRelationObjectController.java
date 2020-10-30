@@ -11,10 +11,10 @@ import org.springframework.web.bind.annotation.RestController;
  * </p>
  *
  * @author wuhuzi
- * @since 2020-10-27
+ * @since 2020-10-30
  */
 @RestController
-@RequestMapping("/object-relation")
-public class ObjectRelationController {
+@RequestMapping("/object-relation-object")
+public class ObjectRelationObjectController {
 
 }
