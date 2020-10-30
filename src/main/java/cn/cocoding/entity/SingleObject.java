@@ -14,7 +14,7 @@ import lombok.experimental.Accessors;
  * </p>
  *
  * @author wuhuzi
- * @since 2020-10-27
+ * @since 2020-10-30
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
@@ -29,13 +29,21 @@ public class SingleObject implements Serializable {
 
     private Integer userId;
 
+    private String objectLableName;
+
     private String objectName;
 
     private String attribute;
 
-    private String imageUrl;
+    private String fileType;
 
-    private String vedioUrl;
+    private String fileUrl;
+
+    private String remark;
+
+    private Integer isBuildFlag;
+
+    private Integer delete;
 
 
 }

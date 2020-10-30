@@ -14,7 +14,7 @@ import lombok.experimental.Accessors;
  * </p>
  *
  * @author wuhuzi
- * @since 2020-10-27
+ * @since 2020-10-30
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
@@ -29,25 +29,35 @@ public class DoubleObjectRelation implements Serializable {
 
     private Integer userId;
 
+    private String objectOneLableName;
+
     private String objectOneName;
 
     private String objectOneAttribute;
 
-    private String objectOneImageUrl;
+    private String objectOneFileType;
 
-    private String objectOneVedioUrl;
+    private String objectOneFileUrl;
+
+    private String objectTwoLableName;
 
     private String objectTwoName;
 
     private String objectTwoAttribute;
 
-    private String objectTwoImageUrl;
+    private String objectTwoFileType;
 
-    private String objectTwoVedioUrl;
+    private String objectTwoFileUrl;
 
     private String oneRelationTwo;
 
+    private String oneRelationTwoAttribute;
+
     private Integer isBuildFlag;
+
+    private String remark;
+
+    private Integer delete;
 
 
 }

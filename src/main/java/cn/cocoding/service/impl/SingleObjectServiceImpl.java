@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
  * </p>
  *
  * @author wuhuzi
- * @since 2020-10-27
+ * @since 2020-10-30
  */
 @Service
 public class SingleObjectServiceImpl extends ServiceImpl<SingleObjectMapper, SingleObject> implements SingleObjectService {

@@ -28,11 +28,16 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
     @Override
     public String login(User user) {
         User userByUsername = userMapper.getUserByUsername(user.getUserName());
-        Assert.notNull(userByUsername,"object user is required in UserServiceImpl Class and login method");
+        if(userByUsername.isEmpty(userByUsername)){
+            return "fail";
+        }
+//        Assert.notNull(userByUsername,"object user is required in UserServiceImpl Class and login method");
+
         if (user.getUserPassword().equals(userByUsername.getUserPassword())){
             return "success";
         }
         return "fail";
+
     }
 
 }

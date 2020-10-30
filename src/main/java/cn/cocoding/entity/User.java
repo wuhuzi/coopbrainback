@@ -34,4 +34,7 @@ public class User implements Serializable {
     private String userPassword;
 
 
+    public boolean isEmpty(Object user) {
+        return user == null;
+    }
 }

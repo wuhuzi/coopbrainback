@@ -9,7 +9,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * </p>
  *
  * @author wuhuzi
- * @since 2020-10-27
+ * @since 2020-10-30
  */
 public interface SingleObjectService extends IService<SingleObject> {
 

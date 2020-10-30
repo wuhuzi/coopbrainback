@@ -9,7 +9,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * </p>
  *
  * @author wuhuzi
- * @since 2020-10-27
+ * @since 2020-10-30
  */
 public interface DoubleObjectRelationMapper extends BaseMapper<DoubleObjectRelation> {
 
