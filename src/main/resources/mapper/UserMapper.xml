@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.cocoding.mapper.UserMapper">
+
+
+        <!--resultMap对应的是表与实体类的映射  - type 数据库表对应的实体类，别名或完整类名都可以-->
+        <resultMap id="BaseResultMap" type="cn.cocoding.entity.User" >
+            <!-- 结果集的主键 -->
+            <id column="id" property="id" jdbcType="INTEGER" />
+            <!-- 普通的列  -column 是数据库中字段， property是实体类中字段-->
+            <result column="user_name" property="userName" jdbcType="VARCHAR" />
+            <result column="user_password" property="userPassword" jdbcType="VARCHAR" />
+        </resultMap>
+
+
+        <!--parameterType(输入类型)、resultType(输出类型)-->
+        <select id="getUserByUsername" parameterType="String" resultType="cn.cocoding.entity.User">
+            SELECT * FROM cbb_user WHERE user_name = #{userName,jdbcType=VARCHAR}
+        </select>
+
+        <!--  查询多个 result type is list  -->
+<!--        <select id="findAll" resultMap="BaseResultMap">-->
+<!--            SELECT * FROM cbb_user-->
+<!--        </select>-->
+
+</mapper>

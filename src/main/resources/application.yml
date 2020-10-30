@@ -1,10 +1,11 @@
 # DataSource Config
 spring:
   datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/coopbrainback?useUnicode=true&useSSL=false&characterEncoding=utf8&serverTimezone=Asia/Shanghai
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/coopbrainback?characterEncoding=utf-8&serverTimezone=GMT%2B8
     username: root
-    password: admin
-mybatis-plus:
+    password: root
+mybatis:
+  type-aliases-package: cn.cocoding.entity
   mapper-locations: classpath*:/mapper/**Mapper.xml
 
