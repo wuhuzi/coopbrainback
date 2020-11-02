@@ -29,7 +29,7 @@ public class ObjectRelationObject implements Serializable {
 
     private Long objectOneId;
 
-    private Integer relationName;
+    private String relationName;
 
     private Long objectTwoId;
 

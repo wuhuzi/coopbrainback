@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="cn.cocoding.mapper.ObjectRelationObjectMapper">
-
+    <!--  插入单个实体  -->
+    <insert id="insertObjectReationObject" parameterType="cn.cocoding.entity.ObjectRelationObject">
+        insert into cbb_object_relation_object (object_one_id,relation_name,object_two_id,relation_attribute)
+        values (#{objectOneId},#{relationName},#{objectTwoId},#{relationAttribute})
+    </insert>
 </mapper>

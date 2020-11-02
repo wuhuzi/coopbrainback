@@ -2,4 +2,61 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="cn.cocoding.mapper.SingleObjectMapper">
 
+    <!--resultMap对应的是表与实体类的映射  - type 数据库表对应的实体类，别名或完整类名都可以-->
+    <resultMap id="BaseResultMap" type="cn.cocoding.entity.SingleObject" >
+        <!-- 结果集的主键 -->
+        <id column="id" property="id" jdbcType="BIGINT" />
+        <!-- 普通的列  -column 是数据库中字段， property是实体类中字段-->
+        <result column="user_id" property="userId" jdbcType="INTEGER" />
+        <result column="object_lable_name" property="objectLableName" jdbcType="VARCHAR" />
+        <result column="object_name" property="objectName" jdbcType="VARCHAR" />
+        <result column="attribute" property="attribute" jdbcType="VARCHAR" />
+        <result column="file_type" property="fileType" jdbcType="VARCHAR" />
+        <result column="file_url" property="fileUrl" jdbcType="VARCHAR" />
+        <result column="remark" property="remark" jdbcType="VARCHAR" />
+        <result column="is_build_flag" property="isBuildFlag" jdbcType="INTEGER" />
+        <result column="delete" property="delete" jdbcType="INTEGER" />
+    </resultMap>
+
+    <!--  插入单个实体  -->
+    <insert id="insertSingleObject" parameterType="cn.cocoding.entity.SingleObject" useGeneratedKeys="true" keyProperty="id" keyColumn="id" >
+        insert into cbb_single_object (user_id,object_lable_name,object_name,attribute)
+        values (#{userId},#{objectLableName},#{objectName},#{attribute})
+    </insert>
+
+    <!--检测实体是否已经存储-->
+    <select id="checkEntity" parameterType="String" resultType="cn.cocoding.entity.SingleObject">
+            SELECT * FROM cbb_single_object WHERE object_lable_name = #{objectLableName,jdbcType=VARCHAR}
+             And object_name = #{objectName,jdbcType=VARCHAR}
+    </select>
+
+
+<!--
+
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL,
+  `object_lable_name` varchar(255) NOT NULL,
+  `object_name` varchar(255) NOT NULL,
+  `attribute` longtext,
+  `file_type` varchar(255) DEFAULT NULL,
+  `file_url` varchar(255) DEFAULT NULL,
+  `remark` varchar(255) DEFAULT NULL,
+  `is_build_flag` int(11) DEFAULT '0',
+  `delete` int(11) DEFAULT '0',
+  PRIMARY KEY (`id`)
+
+-->
+<!--    <update id="updateAuthor">-->
+<!--      update Author set-->
+<!--        username = #{username},-->
+<!--        password = #{password},-->
+<!--        email = #{email},-->
+<!--        bio = #{bio}-->
+<!--      where id = #{id}-->
+<!--    </update>-->
+
+<!--    <delete id="deleteAuthor">-->
+<!--      delete from Author where id = #{id}-->
+<!--    </delete>-->
+
 </mapper>

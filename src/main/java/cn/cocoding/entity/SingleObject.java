@@ -33,6 +33,8 @@ public class SingleObject implements Serializable {
 
     private String objectName;
 
+    private String brandOwner;
+
     private String attribute;
 
     private String fileType;
@@ -44,6 +46,10 @@ public class SingleObject implements Serializable {
     private Integer isBuildFlag;
 
     private Integer delete;
+
+    public static boolean isEmpty(Object singleObject) {
+        return singleObject == null;
+    }
 
 
 }

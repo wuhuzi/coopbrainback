@@ -13,4 +13,6 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface DoubleObjectRelationService extends IService<DoubleObjectRelation> {
 
+    String saveEntity2EntityLib(String doubleObjectData4Json);
+
 }

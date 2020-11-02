@@ -12,5 +12,5 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * @since 2020-10-30
  */
 public interface ObjectRelationObjectMapper extends BaseMapper<ObjectRelationObject> {
-
+   int insertObjectReationObject(ObjectRelationObject objectRelationObject);
 }
