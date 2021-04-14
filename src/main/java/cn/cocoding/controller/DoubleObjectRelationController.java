@@ -5,8 +5,6 @@ import cn.cocoding.config.lang.Result;
 import cn.cocoding.entity.DoubleObjectData4Json;
 import cn.cocoding.entity.SingleObject;
 import cn.cocoding.service.DoubleObjectRelationService;
-import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

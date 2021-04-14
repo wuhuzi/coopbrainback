@@ -20,8 +20,8 @@
 
     <!--  插入单个实体  -->
     <insert id="insertSingleObject" parameterType="cn.cocoding.entity.SingleObject" useGeneratedKeys="true" keyProperty="id" keyColumn="id" >
-        insert into cbb_single_object (user_id,object_lable_name,object_name,attribute)
-        values (#{userId},#{objectLableName},#{objectName},#{attribute})
+        insert into cbb_single_object (user_id,object_lable_name,object_name,attribute,file_url,file_type)
+        values (#{userId},#{objectLableName},#{objectName},#{attribute},#{fileUrl},#{fileType})
     </insert>
 
     <!--检测实体是否已经存储-->

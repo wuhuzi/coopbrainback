@@ -1,13 +1,38 @@
 # DataSource Config
 spring:
   datasource:
-    driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://172.31.72.57:3306/coopbrainback?characterEncoding=utf-8&serverTimezone=GMT%2B8
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://172.31.72.122:3306/coopbrainback?characterEncoding=utf-8&serverTimezone=GMT%2B8
     username: root
     password: 123456
+
+  servlet:
+    multipart:
+      max-file-size: 20MB  # 单个文件的大小
+      max-request-size: 200MB  # 上传文件的总大小
+
+
+
 mybatis:
   type-aliases-package: cn.cocoding.entity
   mapper-locations: classpath*:/mapper/**Mapper.xml
+
+
+
+
+fdfs:
+#  connectTimeout: 600
+  so-timeout: 30501 # 超时时间
+  connect-timeout: 30601 # 连接超时时间
+
+  thumb-image: # 缩略图
+    width: 60
+    height: 60
+  trackerList:
+    - 172.31.72.122:22122
+
+
+
 
 Configuration:
   status: warn

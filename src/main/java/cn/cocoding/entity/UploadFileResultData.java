@@ -1,13 +1,14 @@
 package cn.cocoding.entity;
 
-import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
-import java.io.Serializable;
+import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.experimental.Accessors;
+
+import java.io.Serializable;
 
 /**
  * <p>
@@ -22,20 +23,19 @@ import lombok.experimental.Accessors;
 @Getter
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
-@TableName("cbb_user")
-public class User implements Serializable {
+public class UploadFileResultData implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    @TableId(value = "id", type = IdType.AUTO)
-    private Integer id;
+    private String fileName;
 
-    private String userName;
+    private String fileUrl;
 
-    private String userPassword;
-
-
-    public boolean isEmpty(Object user) {
-        return user == null;
+    @Override
+    public String toString() {
+        return "{" +
+                "fileName:'" + fileName + '\'' +
+                ", fileUrl:'" + fileUrl + '\'' +
+                '}';
     }
 }
